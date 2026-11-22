@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "@/*": ["./src/*"],
+      "@components": ["./src/components"],
+      "@assets": ["./src/assets"],
+      "@store": ["./src/store"],
+      "@hooks": ["./src/hooks"]
+    },
+    "jsx": "react-jsx",
+    "allowJs": true
+  },
+  "include": ["src"]
+}
