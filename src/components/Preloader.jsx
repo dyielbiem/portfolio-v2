@@ -26,7 +26,7 @@ const Preloader = ({ onPreloadCompleted }) => {
         <img
           src={theme === "light" ? lightPreloaderLogo : darkPreloaderLogo}
           alt="logo"
-          className="w-64 select-none pointer-events-none"
+          className="w-56 select-none pointer-events-none"
         />
       </div>
     </div>

@@ -1,32 +1,24 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback } from "react";
 
-const useAnimateToShow = ({ threshold = 0.2, rootMargin = "0px" } = {}) => {
-  const observerRef = useRef(null);
+const useAnimateToShow = ({ threshold = 0.2, rootMargin = "0px" } = {}) =>
+  useCallback(
+    (element) => {
+      element.classList.add("animate-to-show");
 
-  useEffect(() => {
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
           if (!entry.isIntersecting) return;
+          element.classList.add("animated");
+          observer.disconnect();
+        },
+        { threshold, rootMargin },
+      );
 
-          entry.target.classList.add("animated");
-          observerRef.current?.unobserve(entry.target);
-        });
-      },
-      { threshold, rootMargin },
-    );
+      observer.observe(element);
 
-    return () => observerRef.current?.disconnect();
-  }, [threshold, rootMargin]);
-
-  const ref = useCallback((element) => {
-    if (!element) return;
-
-    element.classList.add("animate-to-show");
-    observerRef.current?.observe(element);
-  }, []);
-
-  return ref;
-};
+      return () => observer.disconnect();
+    },
+    [threshold, rootMargin],
+  );
 
 export default useAnimateToShow;

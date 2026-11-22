@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { clsx, cn } from "cn";
 
-import useAnimateToShow from "@/hooks/useAnimateToShow";
+import useAnimateToShow from "@hooks/useAnimateToShow";
 
 import { IoExtensionPuzzleOutline, IoLogoJavascript } from "react-icons/io5";
 import { BsGit } from "react-icons/bs";

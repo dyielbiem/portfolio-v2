@@ -1,6 +1,6 @@
 import ProjectItem from "@components/ProjectItem";
 
-import useAnimateToShow from "@/hooks/useAnimateToShow";
+import useAnimateToShow from "@hooks/useAnimateToShow";
 
 import { LuFolderCode } from "react-icons/lu";
 

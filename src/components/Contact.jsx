@@ -1,6 +1,6 @@
 import { cn } from "cn";
 
-import useAnimateToShow from "@/hooks/useAnimateToShow";
+import useAnimateToShow from "@hooks/useAnimateToShow";
 
 import { IoMdPaperPlane } from "react-icons/io";
 
