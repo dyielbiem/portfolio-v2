@@ -9,7 +9,12 @@ const Preloader = ({ onPreloadCompleted }) => {
   const { theme } = useThemeStore();
 
   return (
-    <div className="h-svh w-svw flex justify-center items-center bg-(--bg-color)">
+    <div
+      className={cn(
+        "h-svh w-svw overflow-hidden flex",
+        "justify-center items-center bg-(--bg-color)",
+      )}
+    >
       <div
         className={cn(
           "max-w-[60%] relative",
